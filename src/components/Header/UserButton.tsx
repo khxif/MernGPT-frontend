@@ -1,4 +1,5 @@
 import { useUser } from "@/hooks/useUser";
+import { BASE_URL } from "@/lib/constants";
 import RevealAnimation from "@/motion/RevealAnimation";
 import { useAppStore } from "@/store/store";
 import { useLayoutEffect } from "react";
@@ -22,7 +23,7 @@ export default function UserButton() {
 
   const handleLogOut = async () => {
     try {
-      const res = await fetch("/api/user/logout", {
+      const res = await fetch(`${BASE_URL}/api/user/logout`, {
         method: "GET",
         credentials: "include",
         headers: {

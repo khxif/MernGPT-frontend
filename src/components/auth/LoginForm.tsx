@@ -14,6 +14,7 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "@/lib/constants";
 
 const formSchema = z.object({
   email: z.string().min(6, {
@@ -40,7 +41,7 @@ export default function LoginForm() {
     form.reset();
 
     try {
-      const res = await fetch("/api/user/login", {
+      const res = await fetch(`${BASE_URL}/api/user/login`, {
         method: "POST",
         body: JSON.stringify(values),
         headers: {

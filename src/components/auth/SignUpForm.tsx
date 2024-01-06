@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/lib/constants";
 import { useAppStore } from "@/store/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -6,12 +7,12 @@ import { toast } from "sonner";
 import * as z from "zod";
 import { Button } from "../ui/button";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
 
@@ -43,7 +44,7 @@ export default function SignUpForm() {
     form.reset();
 
     try {
-      const res = await fetch("/api/user/signup", {
+      const res = await fetch(`${BASE_URL}/api/user/signup`, {
         method: "POST",
         body: JSON.stringify(values),
         headers: {
