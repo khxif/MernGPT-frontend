@@ -12,9 +12,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api":
-        process.env.NODE_ENV === "production"
-          ? "https://mern-gpt-api.vercel.app"
-          : "http://localhost:8080",
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8080"
+          : "https://mern-gpt-api.vercel.app",
     },
   },
 });
