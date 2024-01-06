@@ -9,12 +9,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: {
-    proxy: {
-      "/api":
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:8080"
-          : "https://mern-gpt-api.vercel.app",
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/api": {
+  //       target:
+  //         process.env.NODE_ENV === "development"
+  //           ? "http://localhost:8080"
+  //           : "https://mern-gpt-api.vercel.app",
+  //     },
+  //   },
+  // },
 });

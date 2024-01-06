@@ -1,5 +1,7 @@
+import { BASE_URL } from "./constants";
+
 const fetchUser = async () => {
-  const res = await fetch("/api/user/auth-status", {
+  const res = await fetch(`${BASE_URL}/api/user/auth-status`, {
     method: "GET",
     credentials: "include",
     headers: {
