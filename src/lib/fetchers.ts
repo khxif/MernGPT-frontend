@@ -1,5 +1,5 @@
 const fetchUser = async () => {
-  const res = await fetch("https://mern-gpt-api.vercel.app/api/user/auth-status", {
+  const res = await fetch("/api/user/auth-status", {
     method: "GET",
     credentials: "include",
     headers: {
