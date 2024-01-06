@@ -14,7 +14,7 @@ export default defineConfig({
       "/api":
         process.env.NODE_ENV === "development"
           ? "http://localhost:8080"
-          : "https://mern-gpt-api.vercel.app/api",
+          : "https://mern-gpt-api.vercel.app",
     },
   },
 });
